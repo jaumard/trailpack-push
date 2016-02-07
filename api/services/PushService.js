@@ -10,26 +10,25 @@ const _ = require('lodash')
  * @description Send push notification to Android or iOS devices
  */
 module.exports = class PushService extends Service {
-  sendToAPN(token, message) {
-    const options = this.app.config.push.apn;
+  sendToAPN (token, message) {
+    const options = this.app.config.push.apn
 
     if (!Array.isArray(token)) {
-      token = [token];
+      token = [token]
     }
 
-    const apnConnection = new apn.Connection(options);
+    const apnConnection = new apn.Connection(options)
 
-    let note = new apn.Notification();
-    note = _.merge(note, message);
+    let note = new apn.Notification()
+    note = _.merge(note, message)
 
-    for (let i = 0; i < token.length; i++) {
-      const obj = token[i];
-      const myDevice = new apn.Device(obj);
-      apnConnection.pushNotification(note, myDevice);
+    for (let part in token) {
+      let myDevice = new apn.Device(part)
+      apnConnection.pushNotification(note, myDevice)
     }
   }
 
-  sendToGCM(ids, messageInfos, retry, next) {
+  sendToGCM (ids, messageInfos, retry, next) {
     if (!Array.isArray(ids)) {
       ids = [ids]
     }
@@ -47,14 +46,12 @@ module.exports = class PushService extends Service {
     // Set up the sender with you API key
     const sender = new gcm.Sender(this.app.config.push.gcm.senderId)
 
-    for (let i = 0; i < ids.length; i++) {
-      const obj = ids[i]
-
+    for (let part in ids) {
       if (retry) {
-        sender.send(message, obj, next)
+        sender.send(message, part, next)
       }
       else {
-        sender.sendNoRetry(message, obj, next)
+        sender.sendNoRetry(message, part, next)
       }
     }
   }
