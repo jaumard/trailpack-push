@@ -5,6 +5,7 @@
 [![Build status][ci-image]][ci-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
 [![Code Climate][codeclimate-image]][codeclimate-url]
+
 :package: Trailpack to send push notification to Android and iOS devices from Trails application
 
 Base on node-gcm and apn modules.
