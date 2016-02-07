@@ -1,4 +1,10 @@
 # trailpack-push
+[![Gitter][gitter-image]][gitter-url]
+[![NPM version][npm-image]][npm-url]
+[![NPM downloads][npm-download]][npm-url]
+[![Build status][ci-image]][ci-url]
+[![Dependency Status][daviddm-image]][daviddm-url]
+[![Code Climate][codeclimate-image]][codeclimate-url]
 :package: Trailpack to send push notification to Android and iOS devices from Trails application
 
 Base on node-gcm and apn modules.
@@ -75,3 +81,19 @@ For an APN notification :
     });
 More informations about parameters here : https://github.com/argon/node-apn#sending-a-notification
    
+
+## License
+[MIT](https://github.com/jaumard/trailpack-push/blob/master/LICENSE)
+
+
+[npm-image]: https://img.shields.io/npm/v/trailpack-push.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/trailpack-push
+[npm-download]: https://img.shields.io/npm/dt/trailpack-push.svg
+[ci-image]: https://travis-ci.org/jaumard/trailpack-push.svg?branch=master
+[ci-url]: https://travis-ci.org/jaumard/trailpack-push
+[daviddm-image]: http://img.shields.io/david/jaumard/trailpack-push.svg?style=flat-square
+[daviddm-url]: https://david-dm.org/jaumard/trailpack-push
+[codeclimate-image]: https://img.shields.io/codeclimate/github/jaumard/trailpack-push.svg?style=flat-square
+[codeclimate-url]: https://codeclimate.com/github/jaumard/trailpack-push
+[gitter-image]: http://img.shields.io/badge/+%20GITTER-JOIN%20CHAT%20%E2%86%92-1DCE73.svg?style=flat-square
+[gitter-url]: https://gitter.im/trailsjs/trails
