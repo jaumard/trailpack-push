@@ -22,8 +22,8 @@ module.exports = class PushService extends Service {
     let note = new apn.Notification()
     note = _.merge(note, message)
 
-    for (let part in token) {
-      let myDevice = new apn.Device(part)
+    for (const part in token) {
+      const myDevice = new apn.Device(part)
       apnConnection.pushNotification(note, myDevice)
     }
   }
@@ -46,7 +46,7 @@ module.exports = class PushService extends Service {
     // Set up the sender with you API key
     const sender = new gcm.Sender(this.app.config.push.gcm.senderId)
 
-    for (let part in ids) {
+    for (const part in ids) {
       if (retry) {
         sender.send(message, part, next)
       }
