@@ -1,6 +1,6 @@
 {
   "name": "trailpack-push",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Trailpack to send push notification to Android and iOS devices from Trails application",
   "homepage": "https://github.com/jaumard/trailpack-push",
   "author": {
@@ -8,12 +8,6 @@
     "email": "jimmy.aumard@gmail.com",
     "url": "https://github.com/jaumard"
   },
-  "files": [
-    "lib",
-    "api",
-    "config",
-    "archetype"
-  ],
   "main": "index.js",
   "keywords": [
     "trailpack",
@@ -28,18 +22,18 @@
   ],
   "dependencies": {
     "apn": "^1.7.5",
-    "lodash": "^4.5.0",
+    "lodash": "^4.11.1",
     "node-gcm": "^0.14.0",
-    "trailpack": "^1.0.0-beta-2",
+    "trailpack": "^1.0.1",
     "trails-service": "^1.0.0-beta-2"
   },
   "devDependencies": {
-    "eslint": "^2.1.0",
+    "eslint": "^2.8.0",
     "eslint-config-trails": "^1.0.4",
     "mocha": "^2.4.5",
-    "smokesignals": "^1.0.2",
-    "trailpack-core": "^1.0.0-alpha-4",
-    "trails": "^1.0.0-beta-1"
+    "smokesignals": "^1.0.9",
+    "trailpack-core": "^1.0.0-beta-6",
+    "trails": "^1.0.0-beta-8"
   },
   "bundledDependencies": [
     "trailpack"

@@ -10,25 +10,44 @@ const _ = require('lodash')
  * @description Send push notification to Android or iOS devices
  */
 module.exports = class PushService extends Service {
-  sendToAPN (token, message) {
-    const options = this.app.config.push.apn
 
+  /**
+   * Send a push notification to iOS devices for one or multiple tokens
+   * @param token (s) to send to
+   * @param message to send
+   */
+  sendToAPN(token, message) {
+    const options = this.app.config.push.apn
     if (!Array.isArray(token)) {
       token = [token]
     }
 
     const apnConnection = new apn.Connection(options)
 
+    if (message.aps.badge)
+      message.aps.badge = parseInt(message.aps.badge) || 0
+
     let note = new apn.Notification()
-    note = _.merge(note, message)
+    note = _.merge(note, message.aps)
+    note.payload = message
+    note.contentAvailable = note.payload.aps['content-available'] || 0
+    delete note.payload.aps
 
     for (const part in token) {
-      const myDevice = new apn.Device(part)
+      const myDevice = new apn.Device(token[part])
       apnConnection.pushNotification(note, myDevice)
     }
   }
 
-  sendToGCM (ids, messageInfos, retry, next) {
+  /**
+   * Send push notifications to Android devices
+   * @param ids tokens to send message to
+   * @param senderId serverID to use to send notifications
+   * @param messageInfos data to send
+   * @param retry on failure
+   * @param next callback results
+   */
+  sendToGCM(ids, senderId, messageInfos, retry, next) {
     if (!Array.isArray(ids)) {
       ids = [ids]
     }
@@ -44,14 +63,14 @@ module.exports = class PushService extends Service {
     }
 
     // Set up the sender with you API key
-    const sender = new gcm.Sender(this.app.config.push.gcm.senderId)
+    const sender = new gcm.Sender(senderId)
 
     for (const part in ids) {
       if (retry) {
-        sender.send(message, part, next)
+        sender.send(message, ids[part], {}, next)
       }
       else {
-        sender.sendNoRetry(message, part, next)
+        sender.sendNoRetry(message, ids[part], next)
       }
     }
   }
