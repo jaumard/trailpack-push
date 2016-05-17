@@ -22,18 +22,18 @@
   ],
   "dependencies": {
     "apn": "^1.7.5",
-    "lodash": "^4.11.1",
+    "lodash": "^4.12.0",
     "node-gcm": "^0.14.0",
-    "trailpack": "^1.0.1",
+    "trailpack": "^1.0.2",
     "trails-service": "^1.0.0-beta-2"
   },
   "devDependencies": {
-    "eslint": "^2.8.0",
-    "eslint-config-trails": "^1.0.4",
+    "eslint": "^2.10.2",
+    "eslint-config-trails": "^1.0.6",
     "mocha": "^2.4.5",
-    "smokesignals": "^1.0.9",
+    "smokesignals": "^1.2.2",
     "trailpack-core": "^1.0.0-beta-6",
-    "trails": "^1.0.0-beta-8"
+    "trails": "^1.0.0"
   },
   "bundledDependencies": [
     "trailpack"
