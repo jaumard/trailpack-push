@@ -1,6 +1,6 @@
 {
   "name": "trailpack-push",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Trailpack to send push notification to Android and iOS devices from Trails application",
   "homepage": "https://github.com/jaumard/trailpack-push",
   "author": {
