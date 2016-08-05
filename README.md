@@ -5,6 +5,8 @@
 [![Build status][ci-image]][ci-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
 [![Code Climate][codeclimate-image]][codeclimate-url]
+[![Beerpay](https://beerpay.io/jaumard/trailpack-push/badge.svg?style=flat)](https://beerpay.io/jaumard/trailpack-push)
+[![Beerpay](https://beerpay.io/jaumard/trailpack-push/make-wish.svg?style=flat)](https://beerpay.io/jaumard/trailpack-push)
 
 :package: Trailpack to send push notification to Android and iOS devices from Trails application
 
