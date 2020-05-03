@@ -25,7 +25,8 @@
     "lodash": "^4.12.0",
     "node-gcm": "^0.14.0",
     "trailpack": "^1.0.2",
-    "trails-service": "^1.0.0-beta-2"
+    "trails-service": "^1.0.0-beta-2",
+    "snyk": "^1.317.0"
   },
   "devDependencies": {
     "eslint": "^2.10.2",
@@ -39,7 +40,9 @@
     "trailpack"
   ],
   "scripts": {
-    "test": "eslint . && mocha"
+    "test": "eslint . && mocha",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "engines": {
     "node": ">= 4.0.0"
@@ -48,5 +51,6 @@
     "extends": "trails"
   },
   "repository": "https://github.com/jaumard/trailpack-push",
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
