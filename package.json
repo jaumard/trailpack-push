@@ -23,7 +23,7 @@
   "dependencies": {
     "apn": "^1.7.5",
     "lodash": "^4.12.0",
-    "node-gcm": "^0.14.0",
+    "node-gcm": "^1.0.0",
     "trailpack": "^1.0.2",
     "trails-service": "^1.0.0-beta-2"
   },
